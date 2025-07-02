@@ -1,0 +1,50 @@
+{
+  "lexicon": 1,
+  "id": "blog.micro.post",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["text", "createdAt"],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "html": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "images": {
+            "type": "array",
+            "description": "Same as app.bsky.embed.images#image",
+            "maxLength": 4,
+            "items": {
+              "type": "ref",
+              "ref": "app.bsky.embed.images#image"
+            }
+          },
+          "facets": {
+            "type": "array",
+            "description": "Annotations of text such as links and images.",
+            "items": {
+              "type": "ref",
+              "ref": "app.bsky.richtext.facet"
+            }
+          }
+        }
+      }
+    }
+  }
+}
