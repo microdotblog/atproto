@@ -1,0 +1,24 @@
+{
+  "lexicon": 1,
+  "id": "blog.micro.image",
+  "defs": {
+    "main": {
+      "type": "object",
+      "required": ["image"],
+      "properties": {
+        "alt": {
+          "type": "string"
+        },
+        "image": {
+          "type": "blob",
+          "accept": ["image/*"],
+          "maxSize": 1000000
+        },
+        "aspectRatio": {
+          "type": "ref",
+          "ref": "app.bsky.embed.defs#aspectRatio"
+        }
+      }
+    }
+  }
+}
